@@ -5,56 +5,7 @@ import "google/protobuf/timestamp.proto";
 package contract.v1;
 
 message Events {
-    repeated grt_Approval grt_approvals = 1;
-    repeated grt_MinterAdded grt_minter_addeds = 2;
-    repeated grt_MinterRemoved grt_minter_removeds = 3;
-    repeated grt_NewOwnership grt_new_ownerships = 4;
-    repeated grt_NewPendingOwnership grt_new_pending_ownerships = 5;
-    repeated grt_Transfer grt_transfers = 6;
-}
-
-message grt_Approval {
-    string evt_tx_hash = 1;
-    uint32 evt_index = 2;
-    google.protobuf.Timestamp evt_block_time = 3;
-    uint64 evt_block_number = 4;
-    bytes owner = 5;
-    bytes spender = 6;
-    string value = 7;
-}
-
-message grt_MinterAdded {
-    string evt_tx_hash = 1;
-    uint32 evt_index = 2;
-    google.protobuf.Timestamp evt_block_time = 3;
-    uint64 evt_block_number = 4;
-    bytes account = 5;
-}
-
-message grt_MinterRemoved {
-    string evt_tx_hash = 1;
-    uint32 evt_index = 2;
-    google.protobuf.Timestamp evt_block_time = 3;
-    uint64 evt_block_number = 4;
-    bytes account = 5;
-}
-
-message grt_NewOwnership {
-    string evt_tx_hash = 1;
-    uint32 evt_index = 2;
-    google.protobuf.Timestamp evt_block_time = 3;
-    uint64 evt_block_number = 4;
-    bytes from = 5;
-    bytes to = 6;
-}
-
-message grt_NewPendingOwnership {
-    string evt_tx_hash = 1;
-    uint32 evt_index = 2;
-    google.protobuf.Timestamp evt_block_time = 3;
-    uint64 evt_block_number = 4;
-    bytes from = 5;
-    bytes to = 6;
+    repeated grt_Transfer grt_transfers = 1;
 }
 
 message grt_Transfer {
