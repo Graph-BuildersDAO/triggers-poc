@@ -1,0 +1,54 @@
+type grt_approval @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    owner: String!
+    spender: String!
+    value: BigDecimal!
+}
+type grt_minter_added @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    account: String!
+}
+type grt_minter_removed @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    account: String!
+}
+type grt_new_ownership @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    from: String!
+    to: String!
+}
+type grt_new_pending_ownership @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    from: String!
+    to: String!
+}
+type grt_transfer @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    from: String!
+    to: String!
+    value: BigDecimal!
+}
