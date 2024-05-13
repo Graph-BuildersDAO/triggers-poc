@@ -16,4 +16,6 @@ message grt_Transfer {
     bytes from = 5;
     bytes to = 6;
     string value = 7;
+    string from_balance = 8;
+    string to_balance = 9;
 }
