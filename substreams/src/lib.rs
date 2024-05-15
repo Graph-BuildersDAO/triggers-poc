@@ -42,8 +42,8 @@ fn map_transfers(blk: eth::Block) -> Result<contract::Transfers, substreams::err
                                 evt_index: log.block_index,
                                 evt_block_time: Some(blk.timestamp().to_owned()),
                                 evt_block_number: blk.number,
-                                from: transfer.from,
-                                to: transfer.to,
+                                from: Hex::encode(transfer.from),
+                                to: Hex::encode(transfer.to),
                                 value: transfer.value.to_string(),
                                 from_balance: from_balance.to_string(),
                                 to_balance: to_balance.to_string(),
@@ -69,8 +69,8 @@ fn graph_grt_out(transfers: &contract::Transfers, tables: &mut EntityChangesTabl
             .set("evt_index", evt.evt_index)
             .set("evt_block_time", evt.evt_block_time.as_ref().unwrap())
             .set("evt_block_number", evt.evt_block_number)
-            .set("from", Hex(&evt.from).to_string())
-            .set("to", Hex(&evt.to).to_string())
+            .set("from", &evt.from)
+            .set("to", &evt.to)
             .set("value", BigDecimal::from_str(&evt.value).unwrap());
     });
 }

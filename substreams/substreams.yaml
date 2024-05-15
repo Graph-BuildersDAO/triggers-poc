@@ -21,7 +21,7 @@ binaries:
 modules:
   - name: map_transfers
     kind: map
-    initialBlock: 19867169
+    initialBlock: 11446769
     inputs:
       - source: sf.ethereum.type.v2.Block
     output:
@@ -29,7 +29,7 @@ modules:
 
   - name: graph_out
     kind: map
-    initialBlock: 19867169
+    initialBlock: 11446769
     inputs:
       - map: map_transfers
     output:

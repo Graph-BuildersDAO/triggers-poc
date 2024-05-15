@@ -9,5 +9,12 @@
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 jmulq/grt-triggers",
     "test": "graph test"
   },
-  "dependencies": { "@graphprotocol/graph-cli": "0.71.2" }
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.71.2",
+    "protobuf-as": "https://github.com/mangas/protobuf-as",
+    "tsx": "^4.10.2"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-ts": "^0.35.1"
+  }
 }

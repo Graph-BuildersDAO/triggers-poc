@@ -8,3 +8,4 @@ type Transfer @entity {
     to: String!
     value: BigDecimal!
 }
+ 

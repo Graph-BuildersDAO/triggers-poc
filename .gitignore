@@ -1,2 +1,11 @@
-/target
-replay.log
+# Graph CLI generated artifacts
+subgraph/build/
+subgraph/generated/
+
+# Dependency directories
+subgraph/node_modules/
+
+# Substreams generated artifacts
+substreams/target/
+substreams/*.spkg
+substreams/replay.log

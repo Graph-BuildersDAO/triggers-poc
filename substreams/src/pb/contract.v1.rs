@@ -16,10 +16,10 @@ pub struct Transfer {
     pub evt_block_time: ::core::option::Option<::prost_types::Timestamp>,
     #[prost(uint64, tag="4")]
     pub evt_block_number: u64,
-    #[prost(bytes="vec", tag="5")]
-    pub from: ::prost::alloc::vec::Vec<u8>,
-    #[prost(bytes="vec", tag="6")]
-    pub to: ::prost::alloc::vec::Vec<u8>,
+    #[prost(string, tag="5")]
+    pub from: ::prost::alloc::string::String,
+    #[prost(string, tag="6")]
+    pub to: ::prost::alloc::string::String,
     #[prost(string, tag="7")]
     pub value: ::prost::alloc::string::String,
     #[prost(string, tag="8")]
