@@ -1,0 +1,13 @@
+{
+  "name": "grt-triggers",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ jmulq/grt-triggers",
+    "create-local": "graph create --node http://localhost:8020/ jmulq/grt-triggers",
+    "remove-local": "graph remove --node http://localhost:8020/ jmulq/grt-triggers",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 jmulq/grt-triggers",
+    "test": "graph test"
+  },
+  "dependencies": { "@graphprotocol/graph-cli": "0.71.2" }
+}

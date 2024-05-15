@@ -1,0 +1,38 @@
+specVersion: v0.1.0
+package:
+  name: triggers_poc
+  version: v0.1.0
+
+imports:
+  graph: https://github.com/streamingfast/substreams-sink-subgraph/releases/download/v0.1.0/substreams-sink-subgraph-protodefs-v0.1.0.spkg
+  entity: https://github.com/streamingfast/substreams-entity-change/releases/download/v1.1.0/substreams-entity-change-v1.1.0.spkg
+
+protobuf:
+  files:
+    - contract.proto
+  importPaths:
+    - ./proto
+
+binaries:
+  default:
+    type: wasm/rust-v1
+    file: ./target/wasm32-unknown-unknown/release/substreams.wasm
+
+modules:
+  - name: map_transfers
+    kind: map
+    initialBlock: 19867169
+    inputs:
+      - source: sf.ethereum.type.v2.Block
+    output:
+      type: proto:contract.v1.Transfers
+
+  - name: graph_out
+    kind: map
+    initialBlock: 19867169
+    inputs:
+      - map: map_transfers
+    output:
+      type: proto:sf.substreams.entity.v1.EntityChanges
+
+network: mainnet

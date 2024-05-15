@@ -1,0 +1,38 @@
+specVersion: 0.0.6
+schema:
+  file: ./schema.graphql
+
+dataSources:
+  - kind: substreams
+    name: triggers-poc
+    network: mainnet
+    source:
+      package:
+        moduleName: map_transfers
+        file: triggers-poc-v0.1.0.spkg
+    mapping:
+      kind: substreams/triggers
+      file: ./src/mapping.ts
+      apiVersion: 0.0.7
+      handler: handleTransfers
+
+
+# specVersion: 0.0.4
+# description: Ethereum Contract Tracking Subgraph (powered by Substreams) modified to use mappings triggers
+# repository: https://github.com/graphprotocol/graph-tooling
+# schema:
+#     file: schema.graphql
+# dataSources:
+#     - kind: substreams
+#       name: sps-triggers
+#       network: mainnet
+#       source:
+#           package:
+#               moduleName: map_contract # change this to the substreams module you want as a source
+#               file: ./substreams-test-v1.0.1.spkg
+#               #params: "foo"
+#       mapping:
+#           kind: substreams/graph-entities
+#           file: ./src/mapping.ts # add the mapping containing the handlers
+#           apiVersion: 0.0.7 # upgrade the API version
+#           handler: handleContract
