@@ -8,4 +8,8 @@ type Transfer @entity {
     to: String!
     value: BigDecimal!
 }
- 
+
+type Account @entity {
+    id: ID!
+    grt_balance: BigInt!
+}
