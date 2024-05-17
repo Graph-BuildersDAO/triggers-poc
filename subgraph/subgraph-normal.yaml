@@ -8,6 +8,7 @@ dataSources:
     name: grt
     network: mainnet
     source:
+      address: '0xc944E90C64B2c07662A292be6244BDf05Cda44a7'
       abi: GRT
       startBlock: 11446769
     mapping:

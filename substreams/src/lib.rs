@@ -38,7 +38,7 @@ fn map_transfers(blk: eth::Block) -> Result<contract::Transfers, substreams::err
                                 extract_balances_from_call(&call, &transfer, &hash_to_address);
 
                             return Some(contract::Transfer {
-                                evt_tx_hash: Hex(&call.transaction.hash).to_string(),
+                                evt_tx_hash: format!("0x{}", Hex::encode(&call.transaction.hash)),
                                 evt_index: log.block_index,
                                 evt_block_time: Some(blk.timestamp().to_owned()),
                                 evt_block_number: blk.number,

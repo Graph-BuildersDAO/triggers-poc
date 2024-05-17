@@ -75,21 +75,17 @@ export function handleTransfer(event: TransferEvent): void {
   if (fromAccount == null) {
     fromAccount = new Account(from.toHexString());
     fromAccount.grt_balance = BigInt.zero();
-    fromAccount.save();
-  } else {
-    let newBalance = fromAccount.grt_balance.minus(value);
-    fromAccount.grt_balance = newBalance;
-    fromAccount.save();
   }
+  let fromBalanceNew = fromAccount.grt_balance.minus(value);
+  fromAccount.grt_balance = fromBalanceNew;
+  fromAccount.save();
 
   let toAccount = Account.load(to.toHexString());
   if (toAccount == null) {
     toAccount = new Account(to.toHexString());
     toAccount.grt_balance = BigInt.zero();
-    toAccount.save();
-  } else {
-    let newBalance = toAccount.grt_balance.plus(value);
-    toAccount.grt_balance = newBalance;
-    toAccount.save();
   }
+  let toBalanceNew = toAccount.grt_balance.plus(value);
+  toAccount.grt_balance = toBalanceNew;
+  toAccount.save();
 }
